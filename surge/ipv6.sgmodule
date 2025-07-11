@@ -1,5 +1,0 @@
-#!name=Open IPV6
-#!desc=Open IPV6
-
-[General]
-ipv6 = true
