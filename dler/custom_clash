@@ -1,3 +1,4 @@
+  - AND,(DST-PORT,443),(NETWORK,UDP), REJECT
   - DOMAIN, download-cdn.jetbrains.com, DIRECT
   - DOMAIN, download.jetbrains.com, DIRECT
   - DOMAIN-SUFFIX, duolingo.cn, DIRECT
