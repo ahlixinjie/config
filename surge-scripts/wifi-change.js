@@ -6,15 +6,6 @@ let config = {
     all_proxy: [], // 指定全局代理的wifi名字
 };
 
-// load user prefs from box
-const boxConfig = $persistentStore.read("surge_running_mode");
-if (boxConfig) {
-    config = JSON.parse(boxConfig);
-    config.silence = JSON.parse(config.silence);
-    config.all_direct = JSON.parse(config.all_direct);
-    config.all_proxy = JSON.parse(config.all_proxy);
-}
-
 const MODE_NAMES = {
     RULE: "🚦规则模式",
     PROXY: "🚀全局代理模式",
@@ -41,14 +32,22 @@ function manager() {
         PROXY: "global-proxy",
         DIRECT: "direct",
     }[mode];
-    $surge.setOutboundMode(target);
-    
-    if (!config.silence) {
-        notify(
-            "🤖 Surge 运行模式",
-            `当前网络：${ssid ? ssid : "蜂窝数据"}`,
-            `Surge 已切换至${MODE_NAMES[mode]}`
-        );
+
+    const OUTBOUND_RULE_KEY = "surge_outbound_rule";
+    // 如果当前网络的 outbound rule 与目标不一致，则切换
+    const outboundRule = $persistentStore.read(OUTBOUND_RULE_KEY);
+    if (!outboundRule || outboundRule !== target) {
+        $persistentStore.write(target, OUTBOUND_RULE_KEY);
+
+        $surge.setOutboundMode(target);
+
+        if (!config.silence) {
+            notify(
+                "🤖 Surge 运行模式",
+                `当前网络：${ssid ? ssid : "蜂窝数据"}`,
+                `Surge 已切换至${MODE_NAMES[mode]}`
+            );
+        }
     }
 }
 
