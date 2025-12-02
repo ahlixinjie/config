@@ -7,6 +7,7 @@
   - DOMAIN-SUFFIX, git.garena.com, Shopee
   - DOMAIN-SUFFIX, shopee.io, Shopee
   - DOMAIN, i.shp.ee, Shopee
+  - DOMAIN-SUFFIX, shopeemobile.com, Shopee
   - SRC-IP-CIDR, 192.168.88.190/32,Game,no-resolve
   - IP-CIDR,140.238.63.153/32,Server,no-resolve
   - IP-CIDR,150.230.106.59/32,Server,no-resolve
@@ -14,4 +15,5 @@
   - DOMAIN,radio-activity.itunes.apple.com,Proxy
   - DOMAIN,itsliveradio.apple.com,Proxy
   - DOMAIN,fpinit.itunes.apple.com,Proxy
+  - DOMAIN, msmp.abchina.com.cn, REJECT
 
