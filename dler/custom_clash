@@ -15,5 +15,5 @@
   - DOMAIN,radio-activity.itunes.apple.com,Proxy
   - DOMAIN,itsliveradio.apple.com,Proxy
   - DOMAIN,fpinit.itunes.apple.com,Proxy
-  - DOMAIN, msmp.abchina.com.cn, REJECT
-
+  - DOMAIN,msmp.abchina.com.cn,REJECT
+  - DOMAIN,seller-gateway.shopee.com,Shopee
