@@ -17,3 +17,5 @@
   - DOMAIN,fpinit.itunes.apple.com,Proxy
   - DOMAIN,msmp.abchina.com.cn,REJECT
   - DOMAIN,seller-gateway.shopee.com,Shopee
+  - DOMAIN,bd-centre.test.shopee.com,Shopee
+  - DOMAIN,bd-centre.shopee.com,Shopee
